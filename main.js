@@ -1,17 +1,22 @@
-function stringReverse(stringToReverse) {
-    let reversedString = '';
-    for(let i = stringToReverse.lenght -1; i >= 0; i--){
-    reversedString += stringToReversed[i];
+//exercise 1
+function wordReverser (wordToReverse){
+    let reveredWord = '';
+    for(let i = wordToReverse.length -1; i>=0; i--){
+        reversedWord += wordToReverse[i];
     }
-    return reversedString;
+    return reversedWord;
 }
 
+const reverseButton = document.getElementById('reverseButton');
+
 window.addEventListener('load', function(){
-    const userWord = prompt('word to reverse');
-    const toReversedString = stringReverse(userWord);
-    let resultSpace = document.getElementById('exercise-1');
-    resultSpace.innerText = 'The reversed world is ${toReversedString}'
+    reverseButton.addEventListener('click', function(){
+        const input = document.getElementById('wordToReverse');
+        const userWord = input.value;
+        console.log(userWord)
+        const reversedUserWord = wordReverser(userWord)
+        let resulSpace = document.getElementById('exercise-1');
+        resultSpace.innerText = 'the reversed word i ${reversedUserWord}'
+    })
+    
 })
-
-
-/*esercizio 2*/ 
